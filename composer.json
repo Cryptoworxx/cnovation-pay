@@ -1,0 +1,24 @@
+{
+    "name": "cryptoworxx/coinworxx",
+	"type": "library",
+    "description": "Client lib to access the coinworxx.com API",
+	"homepage": "https://github.com/Cryptoworxx/coinworxx-clients",
+	"authors": [
+        {
+            "name": "Momentum GmbH",
+            "email": "info@cryptoworxx.com",
+            "homepage": "https://www.cryptoworxx.com",
+            "role": "Developer"
+        }
+    ],
+	"license": "LGPL-3.0-or-later",
+    "require":
+	{
+        "php": "^5.3.3 || ^7.0"
+    },
+	"autoload":
+	{
+        "files": ["php/coinworxx.class.php"],
+		"exclude-from-classmap": ["/php/*test*"]
+    }
+}
