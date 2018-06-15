@@ -1,6 +1,6 @@
 <?php
 
-require("coinworxx.class.php");
+require("CoinworxxClient.php");
 
 array_shift($argv);
 $token = array_shift($argv);
