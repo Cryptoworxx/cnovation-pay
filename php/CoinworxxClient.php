@@ -2,16 +2,18 @@
 
 class CoinworxxClient
 {
-	var $url = "https://coinworxx.com/api";
+	var $url = "https://www.coinworxx.com/api";
 	var $token = false;
+	var $secret = false;
     var $response = false;
     var $success = false;
     var $result = false;
     var $error = false;
 	
-	public function __construct($token=false)
+	public function __construct($token=false, $secret=false)
 	{
 		$this->token = $token;
+		$this->secret = $secret;
 	}
 	
 	protected function callApi($path,$arguments=array())
@@ -21,6 +23,10 @@ class CoinworxxClient
 		$url = "{$this->url}/{$this->token}/{$path}";
         
         $arguments = array_filter($arguments,function($a){ return !is_null($a); });
+       
+        if( $this->secret )
+            $arguments['secret'] = $this->secret;
+        
 		if( count($arguments)>0 )
 			$url .= "?".http_build_query($arguments);
 		
@@ -58,6 +64,17 @@ class CoinworxxClient
 	}
 	
 	public function info() { return $this->callApi(""); }
+    
+    public function register($name)
+    {
+        if( !$this->secret )
+        {
+            $res = $this->callApi("register",compact('name'));
+            if( isset($res['secret']) )
+                $this->secret = $res['secret'];
+        }
+        return $this->secret;
+    }
 	
 	public function currencies() { return $this->callApi("currencies"); }
 	public function currency($code) { return $this->callApi("currencies/{$code}"); }
