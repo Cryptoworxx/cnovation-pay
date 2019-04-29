@@ -8,8 +8,9 @@ connected.
 
 Installation
 ============
-All clients are supposed to be usable as include only, so feel free to grab
-a copy and add it to your source code.    
+API client is supposed to be usable as include only, so feel free to 
+[grab a copy](https://raw.githubusercontent.com/Cryptoworxx/cnovation-pay/master/php/CNovationPayClient.php)
+and add it to your source code.    
 Additionally we support installation via composer (for PHP):
 ```
 composer require cryptoworxx/cnovation-pay

@@ -92,6 +92,15 @@ class CNovationPayClient
         );
     }
 	public function cancelPayment($uid) { return $this->callApi("payments/cancel/{$uid}"); }
+	
+	public function checkout($ident, $price, $price_currency, $reference, $callback, $return_url, $cancel_url = '')
+	{
+		return $this->callApi(
+			"payments/checkout",
+			compact('ident', 'price', 'price_currency', 'reference', 'callback', 'return_url', 'cancel_url')
+		);
+
+	}
 }
 
 class CNovationException extends \Exception { }
