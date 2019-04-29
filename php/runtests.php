@@ -16,7 +16,7 @@ try
 	//$res = $client->currencies();
 	//$res = $client->payments();
 }
-catch(CoinworxxException $ex)
+catch(CNovationException $ex)
 {
 	$res = ['exception'=>$ex->getMessage()];
 }
