@@ -1,13 +1,13 @@
 {
-    "name": "cryptoworxx/coinworxx",
+    "name": "cryptoworxx/cnovation-pay",
 	"type": "library",
-    "description": "Client lib to access the coinworxx.com API",
-	"homepage": "https://github.com/Cryptoworxx/coinworxx-clients",
+    "description": "Client lib to access the c-novation-pay.com API",
+	"homepage": "https://github.com/Cryptoworxx/cnovation-pay",
 	"authors": [
         {
             "name": "Momentum GmbH",
-            "email": "info@cryptoworxx.com",
-            "homepage": "https://www.cryptoworxx.com",
+            "email": "info@c-novation-pay.com",
+            "homepage": "https://www.c-novation-pay.com",
             "role": "Developer"
         }
     ],
@@ -18,7 +18,7 @@
     },
 	"autoload":
 	{
-        "files": ["php/coinworxx.class.php"],
+        "files": ["php/CNovationPayClient.class.php"],
 		"exclude-from-classmap": ["/php/*test*"]
     }
 }

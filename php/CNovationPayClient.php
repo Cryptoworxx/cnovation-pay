@@ -1,8 +1,8 @@
 <?php
 
-class CoinworxxClient
+class CNovationPayClient
 {
-	var $url = "https://www.coinworxx.com/api";
+	var $url = "https://www.c-novation-pay.com/api";
 	var $token = false;
 	var $secret = false;
     var $response = false;
@@ -40,11 +40,11 @@ class CoinworxxClient
 		curl_close($ch);
 		
 		if( !$this->response )
-			throw new CoinworxxException("CURL: {$error}");
+			throw new CNovationException("CURL: {$error}");
 		
 		$json = json_decode($this->response,true);
 		if( !$json )
-			throw new CoinworxxException("INVALID JSON: {$this->response}");
+			throw new CNovationException("INVALID JSON: {$this->response}");
             
         $this->success = $json['success'];
         
@@ -65,11 +65,11 @@ class CoinworxxClient
 	
 	public function info() { return $this->callApi(""); }
     
-    public function register($name)
+    public function register($identifier,$type='')
     {
         if( !$this->secret )
         {
-            $res = $this->callApi("register",compact('name'));
+            $res = $this->callApi("register",compact('identifier','type'));
             if( isset($res['secret']) )
                 $this->secret = $res['secret'];
         }
@@ -94,4 +94,4 @@ class CoinworxxClient
 	public function cancelPayment($uid) { return $this->callApi("payments/cancel/{$uid}"); }
 }
 
-class CoinworxxException extends \Exception { }
+class CNovationException extends \Exception { }

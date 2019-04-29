@@ -1,23 +1,24 @@
 <?php
 
-require("CoinworxxClient.php");
+require("CNovationPayClient.php");
 
 array_shift($argv);
 $token = array_shift($argv);
 $url = array_shift($argv);
 
-$cw = new Coinworxx($token);
+$client = new CNovationPayClient($token);
 if( $url )
-	$cw->url = $url;
+	$client->url = $url;
 
 try
 {
-	$res = $cw->info();
+	$res = $client->info();
+	//$res = $client->currencies();
+	//$res = $client->payments();
 }
 catch(CoinworxxException $ex)
 {
 	$res = ['exception'=>$ex->getMessage()];
 }
-
 
 echo json_encode($res,JSON_PRETTY_PRINT);
