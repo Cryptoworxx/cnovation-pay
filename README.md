@@ -15,7 +15,7 @@ Additionally we support installation via composer (for PHP):
 ```
 composer require cryptoworxx/cnovation-pay
 ```
-Ready-to-use plugins can be found in the [releases section](releases/latest).
+Ready-to-use plugins can be found in the [releases section](https://github.com/Cryptoworxx/cnovation-pay/releases).
 
 Documentation
 -------------
@@ -35,7 +35,7 @@ they are only usable with an additional password.
 Plugins
 -------
 We provide plugins for some well-known shop system, and we plan to add some more too.
-Check the [releases page](releases/latest) for current state of work.   
+Check the [releases page](https://github.com/Cryptoworxx/cnovation-pay/releases) for current state of work.   
 These plugins are ready to use:
 * [Shopware](shopware/README.md)
 * [WooCommerce](wooCommerce/README.md)
