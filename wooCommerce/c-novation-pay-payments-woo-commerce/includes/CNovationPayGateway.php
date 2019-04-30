@@ -155,6 +155,7 @@ class CNovationPayGateway extends WC_Payment_Gateway
 	}
 
 	public function init_form_fields() {
+		$api_endpoint = $this->get_option('cnovationpay_api_endpoint');
 		$this->form_fields = array(
 			'enabled' => array(
 				'title' => __( 'Enable/Disable', 'c-novation-pay-for-woocommerce' ),
@@ -182,7 +183,7 @@ class CNovationPayGateway extends WC_Payment_Gateway
 			'cnovationpay_token'	=> array(
 				'title'			=> __('C-Novation Pay API Token', 'c-novation-pay-for-woocommerce'),
 				'type'			=> 'text',
-				'description' => sprintf( __( 'This token is needed to connect to the C-Novation Pay service. <a href="%s" target="_blank">Get a Token now</a>.', 'c-novation-pay-for-woocommerce' ), 'https://www.c-novation-pay.com/api/authenticate?requesting_system=' . $_SERVER['HTTP_HOST'] ),
+				'description' => sprintf( __( 'This token is needed to connect to the C-Novation Pay service. <a href="%s" target="_blank">Get a Token now</a>.', 'c-novation-pay-for-woocommerce' ), $api_endpoint . '/authenticate?requesting_system=' . $_SERVER['HTTP_HOST'] ),
 			)
 
 		);
