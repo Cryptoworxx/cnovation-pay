@@ -1,7 +1,7 @@
 #Installation
 
 Installing the plugin follows the standard procedure.
-This is namely
+This is namely:
 * upload the plugin ZIP file    
 * install it    
 * configure it    
@@ -26,13 +26,14 @@ or you can simply click on the "get a access now" Link on the plugin config scre
 
 ![get access token](configure_plugin2.png)
 
-An new windows opens and leads you to the process of generating an API Token:    
-![step 1](get_token_1.png)
-
-![step 2](get_token_2.png)    
-
-![step 3](get_token_3.png) 
+An new windows opens and leads you to the process of [generating an API Token](../docs/get_token.md).
 
 Copy that token, paste it into the plugin config window and save:
 
 ![paste token](paste_token.png)
+
+#Remarks
+The shopware plugin follows the "full integration" principle. It uses the
+PHP-CNovationPayClient to separate the API calls from the Shop-UI.
+There are some templates rendered into the Shopware Standard Theme that can be
+overridden in custom themes.

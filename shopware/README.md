@@ -18,7 +18,7 @@ This is namely:
     
 Once the plugin is uploaded and installed, you need to get an API token to
 connect it to the CNovation-Pay ecosystem. You may generate a new token in your portal account
-or you can simply click on the "Get Token" Button the the plugin config screen:    
+or you can simply click on the "Get Token" Button on the plugin config screen:    
 ![configure plugin](configure_plugin_1.png)    
 
 An new windows opens and leads you to the process of [generating an API Token](../docs/get_token.md).    
