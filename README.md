@@ -7,7 +7,7 @@ Feel free to implement your own or contact us if you want a specific system
 connected.
 
 Installation
-============
+------------
 API client is supposed to be usable as include only, so feel free to 
 [grab a copy](https://raw.githubusercontent.com/Cryptoworxx/cnovation-pay/master/php/CNovationPayClient.php)
 and add it to your source code.    
@@ -17,11 +17,11 @@ composer require cryptoworxx/cnovation-pay
 ```
 
 Documentation
-=============
+-------------
 Find the API Reference over [here](reference.md).
 
 Security and Authentication
-===========================
+---------------------------
 The CNovation-Pay API uses SSL and only SSL to secure every request.
 Every request needs a token argument to be accepted, API Token can be generated
 in the [CNovation-Pay portal](https://www.c-novation-pay.com/portal/) or using
@@ -32,10 +32,10 @@ API Token can optionally be registered for a specific system, so that
 they are only usable with an additional password.
 
 Concepts
-========
+--------
 Basically there are two ways of embedding the CNovation-pay API in your system:
 * Use the API default user-interface
 * Use the API to integrate in your own user-interface
 
-For a sample of a complete integration see the Shopware plugin we maintain,
-for a default-UI see the WooCommerce plugin.
+For a sample of a complete integration see the [Shopware plugin](shopware/README.md) we maintain,
+for a default-UI see the [WooCommerce plugin](wooCommerce/README.md).

@@ -30,7 +30,7 @@ Now you can configure your Shopware installation to use the payment method 'C-No
 ![payment method](payment_method.png)    
 
 Remarks
-=======
+-------
 The shopware plugin follows the "full integration" principle. It uses the
 PHP-CNovationPayClient to separate the API calls from the Shop-UI.
 There are some templates rendered into the Shopware Standard Theme that can be

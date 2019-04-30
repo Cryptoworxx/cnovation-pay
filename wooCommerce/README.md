@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 Installing the plugin follows the standard procedure.
 This is namely:
@@ -7,12 +7,12 @@ This is namely:
 * configure it    
 * use it  
 
-##upload
+## upload
 
 ![upload_plugin](upload_plugin.png)
 
 
-##install it
+## install it
 
 ![activate Plugin](activate_plugin.png)
 
@@ -32,8 +32,6 @@ Copy that token, paste it into the plugin config window and save:
 
 ![paste token](paste_token.png)
 
-#Remarks
-The shopware plugin follows the "full integration" principle. It uses the
-PHP-CNovationPayClient to separate the API calls from the Shop-UI.
-There are some templates rendered into the Shopware Standard Theme that can be
-overridden in custom themes.
+# Remarks
+The WooCommerce plugin follows the "default-UI" principle. It uses the
+PHP-CNovationPayClient to start an checkout process and then awaits for the user to return.
