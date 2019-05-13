@@ -18,7 +18,7 @@
     },
 	"autoload":
 	{
-        "files": ["php/CNovationPayClient.class.php"],
+        "files": ["php/CNovationPayClient.php"],
 		"exclude-from-classmap": ["/php/*test*"]
     }
 }
