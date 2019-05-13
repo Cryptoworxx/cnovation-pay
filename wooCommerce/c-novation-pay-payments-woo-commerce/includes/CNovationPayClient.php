@@ -19,6 +19,7 @@ class CNovationPayClient
     protected function callApi($path,$arguments=array())
     {
         $this->response = $this->success = $this->result = $this->error = false;
+
         $url = "{$this->url}/{$this->token}/{$path}";
 
         $arguments = array_filter($arguments,function($a){ return !is_null($a); });
@@ -34,21 +35,16 @@ class CNovationPayClient
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 
-		/**
-		 * for local dev only
-		 */
-//		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        $this->response = curl_exec($ch);
+        $error = curl_error($ch);
+        curl_close($ch);
 
-		$this->response = curl_exec($ch);
-		$error = curl_error($ch);
-		curl_close($ch);
+        if( !$this->response )
+            throw new CNovationException("CURL: {$error}");
 
-		if( !$this->response )
-			throw new CNovationException("CURL: {$error}");
-
-		$json = json_decode($this->response,true);
-		if( !$json )
-			throw new CNovationException("INVALID JSON: {$this->response}");
+        $json = json_decode($this->response,true);
+        if( !$json )
+            throw new CNovationException("INVALID JSON: {$this->response}");
 
         $this->success = $json['success'];
 
