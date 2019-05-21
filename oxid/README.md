@@ -1,6 +1,6 @@
-#Installation
+# Installation
 
-##Installation via Composer
+## Installation via Composer
 
 open terminal, move to your docroot and run following command
 
@@ -8,7 +8,7 @@ open terminal, move to your docroot and run following command
 
 After that, just activate the module in the Oxid backend and clear the cache
 
-#Configuration
+# Configuration
 
 ![configure plugin](configuration.png)
 
