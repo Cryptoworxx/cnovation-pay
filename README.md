@@ -40,9 +40,12 @@ These plugins are ready to use:
 * [Shopware](shopware/README.md)
 * [WooCommerce](wooCommerce/README.md)
 
+These Plugins are installable via composer
+* [OXID](oxid/README.md)
+
+
 These are in planning:
 * [Magento](https://magento.com/)
-* [OXID](https://www.oxid-esales.com/)
 
 Concepts
 --------
