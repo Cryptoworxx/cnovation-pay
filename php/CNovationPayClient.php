@@ -2,13 +2,15 @@
 
 class CNovationPayClient
 {
-	var $url = "https://www.c-novation-pay.com/api";
-	var $token = false;
-	var $secret = false;
-    var $response = false;
-    var $success = false;
-    var $result = false;
-    var $error = false;
+	public $url = "https://www.c-novation-pay.com/api";
+	private $token = false;
+    private $secret = false;
+    public $response = false;
+    public $success = false;
+    public $result = false;
+    public $error = false;
+
+    private $testmode = false;
 	
 	public function __construct($token=false, $secret=false)
 	{
@@ -34,6 +36,11 @@ class CNovationPayClient
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+		if($this->testmode){
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        }
 		
 		$this->response = curl_exec($ch);
 		$error = curl_error($ch);
@@ -103,6 +110,14 @@ class CNovationPayClient
 		);
 
 	}
+
+    /**
+     * @param bool $testmode
+     */
+    public function setTestmode(bool $testmode)
+    {
+        $this->testmode = $testmode;
+    }
 }
 
 class CNovationException extends \Exception { }
