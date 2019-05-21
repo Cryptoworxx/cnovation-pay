@@ -93,6 +93,8 @@ class CNovationPayClient
     }
     public function cancelPayment($uid) { return $this->callApi("payments/cancel/{$uid}"); }
 
+    public function deletePayment($uid) { return $this->callApi("payments/delete/{$uid}"); }
+
     public function checkout($ident, $price, $price_currency, $reference, $callback, $return_url, $cancel_url = '')
     {
         return $this->callApi(
